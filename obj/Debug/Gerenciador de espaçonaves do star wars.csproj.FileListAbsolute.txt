@@ -1,0 +1,19 @@
+D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\bin\Debug\Gerenciador de espaçonaves do star wars.exe.config
+D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\bin\Debug\Gerenciador de espaçonaves do star wars.exe
+D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\bin\Debug\Gerenciador de espaçonaves do star wars.pdb
+D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\obj\Debug\Gerenciador de espaçonaves do star wars.csproj.AssemblyReference.cache
+D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\obj\Debug\Gerenciador_de_espaçonaves_do_star_wars.Properties.Resources.resources
+D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\obj\Debug\Gerenciador de espaçonaves do star wars.csproj.GenerateResource.cache
+D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\obj\Debug\Gerenciador de espaçonaves do star wars.csproj.CoreCompileInputs.cache
+D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\obj\Debug\Gerenciador de espaçonaves do star wars.exe
+D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\obj\Debug\Gerenciador de espaçonaves do star wars.pdb
+D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\bin\Debug\EntityFramework.dll
+D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\bin\Debug\EntityFramework.SqlServer.dll
+D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\bin\Debug\EntityFramework.xml
+D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\bin\Debug\EntityFramework.SqlServer.xml
+D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\obj\Debug\Gerenciador de espaçonaves do star wars.csproj.CopyComplete
+D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\obj\Debug\Gerenciador_de_espaçonaves_do_star_wars.StarWars.resources
+D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\obj\Debug\Gerenciador_de_espaçonaves_do_star_wars.Naves.resources
+D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\obj\Debug\Gerenciador_de_espaçonaves_do_star_wars.Pilotos.resources
+D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\obj\Debug\Gerenciador_de_espaçonaves_do_star_wars.Viagens.resources
+D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\obj\Debug\Gerenciador_de_espaçonaves_do_star_wars.Planetas.resources
