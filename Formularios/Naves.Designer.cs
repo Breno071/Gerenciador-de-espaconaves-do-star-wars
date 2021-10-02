@@ -50,7 +50,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             this.dataGridViewNaves.Location = new System.Drawing.Point(255, 12);
             this.dataGridViewNaves.Name = "dataGridViewNaves";
             this.dataGridViewNaves.ReadOnly = true;
-            this.dataGridViewNaves.Size = new System.Drawing.Size(293, 248);
+            this.dataGridViewNaves.Size = new System.Drawing.Size(258, 248);
             this.dataGridViewNaves.TabIndex = 0;
             // 
             // button1
@@ -122,7 +122,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 272);
+            this.ClientSize = new System.Drawing.Size(525, 272);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbAcao);
             this.Controls.Add(this.label4);

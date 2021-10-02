@@ -42,7 +42,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars.Repositorio
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                MessageBox.Show("Erro");
+                MessageBox.Show("" + ex);
             }
     }
 
@@ -57,16 +57,15 @@ namespace Gerenciador_de_espaçonaves_do_star_wars.Repositorio
 
                 //Cria o comando SQL
                 SqlCommand cmd = new SqlCommand(sql, conn);
-
+                MessageBox.Show(cmd.ExecuteNonQuery() + " Linhas alteradas");
 
                 //Fecha a conexão
                 conn.Close();
-                MessageBox.Show("Sucesso");
+                
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
-                MessageBox.Show("Erro");
+                MessageBox.Show(String.Format("{0}",ex));
             }
         }
 
@@ -81,16 +80,16 @@ namespace Gerenciador_de_espaçonaves_do_star_wars.Repositorio
 
                 //Cria o comando SQL
                 SqlCommand cmd = new SqlCommand(sql, conn);
-
+                MessageBox.Show(cmd.ExecuteNonQuery() + " Linhas alteradas");
 
                 //Fecha a conexão
                 conn.Close();
-                MessageBox.Show("Sucesso");
+                
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                MessageBox.Show("Erro");
+                MessageBox.Show("" + ex);
             }
         }
 
@@ -105,16 +104,38 @@ namespace Gerenciador_de_espaçonaves_do_star_wars.Repositorio
 
                 //Cria o comando SQL
                 SqlCommand cmd = new SqlCommand(sql, conn);
-
+                MessageBox.Show(cmd.ExecuteNonQuery() + " Linhas alteradas");
 
                 //Fecha a conexão
                 conn.Close();
-                MessageBox.Show("Sucesso");
+                
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
-                MessageBox.Show("Erro");
+                MessageBox.Show("" + ex);
+            }
+        }
+
+        public void BuscaViagens(string sql)
+        {
+            try
+            {
+                //Faz a conexão com o banco de dados
+                string conexao = @"Data Source=DESKTOP-6AFO6DC\SQLEXPRESS;Initial Catalog=StarWars;Integrated Security=True";
+                SqlConnection conn = new SqlConnection(conexao);
+                conn.Open();
+
+                //Cria o comando SQL
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                MessageBox.Show(cmd.ExecuteNonQuery() + " Linhas alteradas");
+
+                //Fecha a conexão
+                conn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
             }
         }
     }

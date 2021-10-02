@@ -1,12 +1,5 @@
 ﻿using Gerenciador_de_espaçonaves_do_star_wars.Repositorio;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Gerenciador_de_espaçonaves_do_star_wars
@@ -55,12 +48,13 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                     MessageBox.Show("Buscando pelo Planeta");
                     this.repositorio.Buscar(sql, this.dataGridView1);
                 }
-                else
+                else if (!this.numeroViagem.Text.Equals("") && !this.nomePiloto.Text.Equals("") && !this.nomeNave.Text.Equals(""))
                 {
-                    string sql = "select * from HistoticoViagens where NumeroViagem='" + this.numeroViagem.Text + "' and Piloto='" + this.nomePiloto.Text + "' and Nave='" + this.nomeNave.Text + "';";
-                    MessageBox.Show("Buscando por id Piloto e Nave");
+                    string sql = "select * from HistoricoViagens where Nave='" + this.nomeNave.Text + "';";
+                    MessageBox.Show("Buscando pelo Planeta");
                     this.repositorio.Buscar(sql, this.dataGridView1);
                 }
+                
             }
             #endregion
 
@@ -96,7 +90,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                 }
                 else if (!this.numeroViagem.Text.Equals("") && this.nomePiloto.Text.Equals("") && this.nomeNave.Text.Equals(""))
                 {
-                    string sql = "delete * from HistoricoViagens where numeroViagem='" + this.numeroViagem.Text + "';";
+                    string sql = "delete from HistoricoViagens where numeroViagem=" + this.numeroViagem.Text + ";";
                     MessageBox.Show("Deletando pelo numero da viagem");
                     this.repositorio.Deletar(sql);
                 }                
@@ -119,55 +113,55 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                 }
                 else if (!this.numeroViagem.Text.Equals("") && !this.nomePiloto.Text.Equals("") && !this.nomeNave.Text.Equals("") && this.dataSaida.Text.Equals("") && this.dataChegada.Text.Equals(""))
                 {
-                    string sql = String.Format("update HistoricoViagens set Piloto='{0}', Nave='{1}' where NumeroViagem='{2}'", this.nomePiloto.Text, this.nomeNave.Text, this.numeroViagem.Text);
+                    string sql = String.Format("update HistoricoViagens set Piloto='{0}', Nave='{1}' where NumeroViagem={2}", this.nomePiloto.Text, this.nomeNave.Text, this.numeroViagem.Text);
                     MessageBox.Show("Atualizando piloto e nave");
                     this.repositorio.Atualizar(sql);
                 }
                 else if (!this.numeroViagem.Text.Equals("") && !this.nomePiloto.Text.Equals("") && !this.nomeNave.Text.Equals("") && !this.dataSaida.Text.Equals("") && this.dataChegada.Text.Equals(""))
                 {
-                    string sql = String.Format("update HistoricoViagens set Piloto='{0}', Nave='{1}', DataSaida='{2}' where NumeroViagem='{3}';", this.nomePiloto.Text, this.nomeNave.Text, this.dataSaida.Text, this.numeroViagem.Text);
+                    string sql = String.Format("update HistoricoViagens set Piloto='{0}', Nave='{1}', DataSaida='{2}' where NumeroViagem={3};", this.nomePiloto.Text, this.nomeNave.Text, this.dataSaida.Text, this.numeroViagem.Text);
                     MessageBox.Show("Atualizando Piloto nave e data de saida");
                     this.repositorio.Atualizar(sql);
                 }
                 else if (!this.numeroViagem.Text.Equals("") && this.nomePiloto.Text.Equals("") && !this.nomeNave.Text.Equals("") && !this.dataSaida.Text.Equals("") && !this.dataChegada.Text.Equals(""))
                 {
-                    string sql = String.Format("update HistoricoViagens set Nave='{0}', DataSaida='{1}', DataChegada='{2}' where NumeroViagem='{3}';", this.nomeNave.Text, this.dataSaida.Text, this.dataChegada.Text, this.numeroViagem.Text);
+                    string sql = String.Format("update HistoricoViagens set Nave='{0}', DataSaida='{1}', DataChegada='{2}' where NumeroViagem={3};", this.nomeNave.Text, this.dataSaida.Text, this.dataChegada.Text, this.numeroViagem.Text);
                     MessageBox.Show("Atualizando Nave data de saida e data de chegada");
                     this.repositorio.Atualizar(sql);
                 }
                 else if (!this.numeroViagem.Text.Equals("") && this.nomePiloto.Text.Equals("") && this.nomeNave.Text.Equals("") && !this.dataSaida.Text.Equals("") && !this.dataChegada.Text.Equals(""))
                 {
-                    string sql = String.Format("update HistoricoViagens set DataSaida='{0}', DataChegada='{1}' where NumeroViagem='{2}');", this.dataSaida.Text, this.dataChegada.Text, this.numeroViagem.Text);
+                    string sql = String.Format("update HistoricoViagens set DataSaida='{0}', DataChegada='{1}' where NumeroViagem={2});", this.dataSaida.Text, this.dataChegada.Text, this.numeroViagem.Text);
                     MessageBox.Show("Atualizando data de chegada e data de saida");
                     this.repositorio.Atualizar(sql);
                 }
                 else if (!this.numeroViagem.Text.Equals("") && this.nomePiloto.Text.Equals("") && !this.nomeNave.Text.Equals("") && this.dataSaida.Text.Equals("") && !this.dataChegada.Text.Equals(""))
                 {
-                    string sql = String.Format("update HistoricoViagens set Nave='{0}', DataChegada='{1}' where NumeroViagem='{2}'", this.nomeNave.Text, this.dataChegada.Text, this.numeroViagem.Text);
+                    string sql = String.Format("update HistoricoViagens set Nave='{0}', DataChegada='{1}' where NumeroViagem={2}", this.nomeNave.Text, this.dataChegada.Text, this.numeroViagem.Text);
                     MessageBox.Show("Atualizando Nave e data de chegada");
                     this.repositorio.Atualizar(sql);
                 }
                 else if (!this.numeroViagem.Text.Equals("") && !this.nomePiloto.Text.Equals("") && this.nomeNave.Text.Equals("") && this.dataSaida.Text.Equals("") && !this.dataChegada.Text.Equals(""))
                 {
-                    string sql = String.Format("update HistoricoViagens set Piloto='{0}', DataChegada='{1}' where NumeroViagem='{2}'", this.nomePiloto.Text, this.dataChegada.Text, this.numeroViagem.Text);
+                    string sql = String.Format("update HistoricoViagens set Piloto='{0}', DataChegada='{1}' where NumeroViagem={2}", this.nomePiloto.Text, this.dataChegada.Text, this.numeroViagem.Text);
                     MessageBox.Show("Atualizando Piloto e data de chegada");
                     this.repositorio.Atualizar(sql);
                 }
                 else if (!this.numeroViagem.Text.Equals("") && this.nomePiloto.Text.Equals("") && this.nomeNave.Text.Equals("") && this.dataSaida.Text.Equals("") && !this.dataChegada.Text.Equals(""))
                 {
-                    string sql = String.Format("update HistoricoViagens set DataChegada='{0}' where NumeroViagem='{1}'", this.dataChegada.Text, this.numeroViagem.Text);
+                    string sql = String.Format("update HistoricoViagens set DataChegada='{0}' where NumeroViagem={1}", this.dataChegada.Text, this.numeroViagem.Text);
                     MessageBox.Show("Atualizando data de chegada");
                     this.repositorio.Atualizar(sql);
                 }
                 else if (!this.numeroViagem.Text.Equals("") && this.nomePiloto.Text.Equals("") && !this.nomeNave.Text.Equals("") && !this.dataSaida.Text.Equals("") && this.dataChegada.Text.Equals(""))
                 {
-                    string sql = String.Format("update HistoricoViagens set Nave='{0}', DataSaida='{1}', where NumeroViagem='{2}'", this.nomeNave.Text, this.dataSaida.Text, this.numeroViagem.Text);
+                    string sql = String.Format("update HistoricoViagens set Nave='{0}', DataSaida='{1}', where NumeroViagem={2}", this.nomeNave.Text, this.dataSaida.Text, this.numeroViagem.Text);
                     MessageBox.Show("Atualizando nave e data de saida");
                     this.repositorio.Atualizar(sql);
                 }
                 else if (!this.numeroViagem.Text.Equals("") && !this.nomePiloto.Text.Equals("") && !this.nomeNave.Text.Equals("") && this.dataSaida.Text.Equals("") && !this.dataChegada.Text.Equals(""))
                 {
-                    string sql = String.Format("update HistoricoViagens set Piloto='{0}'. Nave='{1}', DataChegada='{2}' where numeroViagem='{3}'",this.nomePiloto.Text, this.nomeNave.Text, this.dataChegada.Text, this.numeroViagem.Text);
+                    string sql = String.Format("update HistoricoViagens set Piloto='{0}'. Nave='{1}', DataChegada='{2}' where numeroViagem={3}",this.nomePiloto.Text, this.nomeNave.Text, this.dataChegada.Text, this.numeroViagem.Text);
                     MessageBox.Show("Atualizando Piloto nave e data de chegada");
                 }
                 else if (!this.numeroViagem.Text.Equals("") && this.nomePiloto.Text.Equals("") && !this.nomeNave.Text.Equals("") && this.dataSaida.Text.Equals("") && this.dataChegada.Text.Equals(""))

@@ -108,7 +108,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             this.dataGridViewPiloto.Location = new System.Drawing.Point(358, 12);
             this.dataGridViewPiloto.Name = "dataGridViewPiloto";
             this.dataGridViewPiloto.ReadOnly = true;
-            this.dataGridViewPiloto.Size = new System.Drawing.Size(227, 335);
+            this.dataGridViewPiloto.Size = new System.Drawing.Size(379, 335);
             this.dataGridViewPiloto.TabIndex = 7;
             // 
             // cbAcao
@@ -138,7 +138,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 359);
+            this.ClientSize = new System.Drawing.Size(749, 359);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbAcao);
             this.Controls.Add(this.dataGridViewPiloto);

@@ -1,13 +1,5 @@
 ﻿using Gerenciador_de_espaçonaves_do_star_wars.Repositorio;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Gerenciador_de_espaçonaves_do_star_wars
@@ -35,19 +27,19 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                 }
                 else if(this.idNave.Text.Equals("") && !this.nomeNave.Text.Equals(""))
                 {
-                    string sql = "select Nome from Naves where Nome='" + this.nomeNave.Text + "';";
+                    string sql = "select * from Naves where Nome='" + this.nomeNave.Text + "';";
                     MessageBox.Show("Buscando pelo nome");
                     this.repositorio.Buscar(sql, this.dataGridViewNaves);
                 }
                 else if (!this.idNave.Text.Equals("") && this.nomeNave.Text.Equals(""))
                 {
-                    string sql = "select id from Naves where id='" + this.idNave.Text + "';";
+                    string sql = "select * from Naves where id=" + this.idNave.Text + ";";
                     MessageBox.Show("Buscando pelo id");
                     this.repositorio.Buscar(sql, this.dataGridViewNaves);
                 }
                 else
                 {
-                    string sql = "select * from Naves where id='" + this.idNave.Text + "' and Nome='" + this.nomeNave.Text + "';";
+                    string sql = "select * from Naves where id=" + this.idNave.Text + " and Nome='" + this.nomeNave.Text + "';";
                     MessageBox.Show("Buscando por id e nome");
                     this.repositorio.Buscar(sql, this.dataGridViewNaves);
                 }
@@ -64,13 +56,13 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                 }
                 else if (this.idNave.Text.Equals("") && !this.nomeNave.Text.Equals(""))
                 {
-                    string sql = "insert into Naves(Nome) values(" + this.nomeNave + ");";
-                    MessageBox.Show("Inserindo pelo nome");
+                    string sql = "insert into Naves(Nome) values ('" + this.nomeNave.Text + "');";
+                    MessageBox.Show("Inserindo pelo nome " + this.nomeNave.Text);
                     this.repositorio.Inserir(sql);
                 }
                 else if (!this.idNave.Text.Equals("") && !this.nomeNave.Text.Equals(""))
                 {
-                    string sql = "insert into Naves(id, Nome) values(" + this.idNave + "," + this.nomeNave + ");";
+                    string sql = "insert into Naves(id, Nome) values(" + this.idNave.Text + ", '" + this.nomeNave.Text + "');";
                     MessageBox.Show("Inserindo pelo nome e id");
                     this.repositorio.Inserir(sql);
                 }
@@ -91,19 +83,19 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                 }
                 else if (this.idNave.Text.Equals("") && !this.nomeNave.Text.Equals(""))
                 {
-                    string sql = "delete * from Naves where Nome='" + this.nomeNave + "';";
+                    string sql = "delete from Naves where Nome='" + this.nomeNave.Text + "';";
                     MessageBox.Show("Deletando pelo nome");
                     this.repositorio.Deletar(sql); 
                 }
                 else if (!this.idNave.Text.Equals("") && this.nomeNave.Text.Equals(""))
                 {
-                    string sql = "delete * from Naves where id='" + this.idNave.Text + "';";
+                    string sql = "delete from Naves where id='" + this.idNave.Text + "';";
                     MessageBox.Show("Deletando pelo id");
                     this.repositorio.Deletar(sql);
                 }
                 else
                 {
-                    string sql = "delete * from Naves where id='" + this.idNave.Text + "' and Nome='" + this.nomeNave.Text + "';";
+                    string sql = "delete from Naves where id='" + this.idNave.Text + "' and Nome='" + this.nomeNave.Text + "';";
                     MessageBox.Show("Deletando pelo id e nome");
                     this.repositorio.Deletar(sql);
                 }
@@ -143,7 +135,16 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (this.cbAcao.Text.Equals("Inserir")) 
+            {
+                this.label3.Visible = false;
+                this.idNave.Visible = false;
+            }
+            else
+            {
+                this.label3.Visible = true;
+                this.idNave.Visible = true;
+            }
             
         }
     }

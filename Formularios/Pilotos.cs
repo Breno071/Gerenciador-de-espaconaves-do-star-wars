@@ -27,7 +27,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                 else if (!this.pilotoId.Text.Equals("") && this.pilotoNome.Text.Equals("") && this.pilotoPlaneta.Text.Equals(""))
                 {
                     string sql = "select * from Pilotos where id='" + this.pilotoId.Text + "';";
-                    MessageBox.Show("Buscando pelo id");
+                    MessageBox.Show("Buscando pelo id" + this.pilotoId.Text);
                     repositorio.Buscar(sql, this.dataGridViewPiloto);
                 }
                 else if (this.pilotoId.Text.Equals("") && !this.pilotoNome.Text.Equals("") && this.pilotoPlaneta.Text.Equals(""))
@@ -50,19 +50,19 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                 }
                 else if (!this.pilotoId.Text.Equals("") && this.pilotoNome.Text.Equals("") && !this.pilotoPlaneta.Text.Equals(""))
                 {
-                    string sql = "select * from Pilotos where id='" + this.pilotoId.Text + "' and Planeta = '" + this.pilotoPlaneta.Text + "';";
+                    string sql = "select * from Pilotos where id=" + this.pilotoId.Text + " and Planeta = '" + this.pilotoPlaneta.Text + "';";
                     MessageBox.Show("Buscando pelo id e planeta");
                     repositorio.Buscar(sql, this.dataGridViewPiloto);
                 }
                 else if (!this.pilotoId.Text.Equals("") && !this.pilotoNome.Text.Equals("") && this.pilotoPlaneta.Text.Equals(""))
                 {
-                    string sql = "select * from Pilotos where Nome='" + this.pilotoNome.Text + "' and id = '" + this.pilotoId.Text + "';";
+                    string sql = "select * from Pilotos where Nome='" + this.pilotoNome.Text + "' and id = " + this.pilotoId.Text + ";";
                     MessageBox.Show("Buscando pelo id e nome");
                     repositorio.Buscar(sql, this.dataGridViewPiloto);
                 }
                 else
                 {
-                    string sql = "select * from Pilotos where id='" + this.pilotoId.Text + "' and Nome='" + this.pilotoNome.Text + "' and Planeta='" + this.pilotoPlaneta.Text + "';";
+                    string sql = "select * from Pilotos where id=" + this.pilotoId.Text + " and Nome='" + this.pilotoNome.Text + "' and Planeta='" + this.pilotoPlaneta.Text + "';";
                     MessageBox.Show("Buscando por id nome e planeta");
                     repositorio.Buscar(sql, this.dataGridViewPiloto);
                 }
@@ -122,43 +122,43 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                 }
                 else if (!this.pilotoId.Text.Equals("") && this.pilotoNome.Text.Equals("") && this.pilotoPlaneta.Text.Equals(""))
                 {
-                    string sql = "delete * from Pilotos where id='" + this.pilotoId.Text + "';";
-                    MessageBox.Show("Deletando pelo id");
+                    string sql = String.Format("delete from Pilotos where id = {0};", this.pilotoId.Text);
+                    MessageBox.Show("Deletando pelo id " +  this.pilotoId.Text );
                     this.repositorio.Deletar(sql);
                 }
                 else if (this.pilotoId.Text.Equals("") && !this.pilotoNome.Text.Equals("") && this.pilotoPlaneta.Text.Equals(""))
                 {
-                    string sql = "delete * from pilotos where Nome='" + this.pilotoNome.Text + "';";
+                    string sql = "delete from pilotos where Nome='" + this.pilotoNome.Text + "';";
                     MessageBox.Show("Deletando pelo Nome");
                     this.repositorio.Deletar(sql);
                 }
                 else if (this.pilotoId.Text.Equals("") && this.pilotoNome.Text.Equals("") && !this.pilotoPlaneta.Text.Equals(""))
                 {
-                    string sql = "delete * from pilotos where Planeta = '" + this.pilotoPlaneta.Text + "';";
+                    string sql = "delete from pilotos where Planeta = '" + this.pilotoPlaneta.Text + "';";
                     MessageBox.Show("Deletando pelo Planeta");
                     this.repositorio.Deletar(sql);
                 }
                 else if (this.pilotoId.Text.Equals("") && !this.pilotoNome.Text.Equals("") && !this.pilotoPlaneta.Text.Equals(""))
                 {
-                    string sql = "delete * from Pilotos where Nome='" + this.pilotoNome.Text + "' and Planeta = '" + this.pilotoPlaneta.Text + "';";
+                    string sql = "delete from Pilotos where Nome='" + this.pilotoNome.Text + "' and Planeta = '" + this.pilotoPlaneta.Text + "';";
                     MessageBox.Show("Deletando pelo nome e planeta");
                     this.repositorio.Deletar(sql);
                 }
                 else if (!this.pilotoId.Text.Equals("") && this.pilotoNome.Text.Equals("") && !this.pilotoPlaneta.Text.Equals(""))
                 {
-                    string sql = "delete * from Pilotos where id='" + this.pilotoId.Text + "' and Planeta = '" + this.pilotoPlaneta.Text + "';";
+                    string sql = "delete from Pilotos where id=" + this.pilotoId.Text + " and Planeta = '" + this.pilotoPlaneta.Text + "';";
                     MessageBox.Show("Deletando pelo id e planeta");
                     this.repositorio.Deletar(sql);
                 }
                 else if (!this.pilotoId.Text.Equals("") && !this.pilotoNome.Text.Equals("") && this.pilotoPlaneta.Text.Equals(""))
                 {
-                    string sql = "delete * from Pilotos where Nome='" + this.pilotoNome.Text + "' and id = '" + this.pilotoId.Text + "';";
+                    string sql = "delete * from Pilotos where Nome='" + this.pilotoNome.Text + "' and id = " + this.pilotoId.Text + ";";
                     MessageBox.Show("Deletando pelo id e nome");
                     this.repositorio.Deletar(sql);
                 }
                 else
                 {
-                    string sql = "select * from Pilotos where id='" + this.pilotoId.Text + "' and Nome='" + this.pilotoNome.Text + "' and Planeta='" + this.pilotoPlaneta.Text + "';";
+                    string sql = "select from Pilotos where id=" + this.pilotoId.Text + "' and Nome=" + this.pilotoNome.Text + "' and Planeta='" + this.pilotoPlaneta.Text + "';";
                     MessageBox.Show("Deletando por id nome e planeta");
                     this.repositorio.Deletar(sql);
                 }

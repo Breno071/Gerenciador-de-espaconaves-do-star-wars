@@ -53,6 +53,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             this.cbAcao.Size = new System.Drawing.Size(121, 21);
             this.cbAcao.TabIndex = 0;
             this.cbAcao.Text = "Selecione";
+            this.cbAcao.SelectedIndexChanged += new System.EventHandler(this.cbAcao_SelectedIndexChanged);
             // 
             // label1
             // 

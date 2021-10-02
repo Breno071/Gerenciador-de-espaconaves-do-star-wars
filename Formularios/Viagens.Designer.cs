@@ -158,7 +158,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             this.dataGridView1.Location = new System.Drawing.Point(340, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(448, 270);
+            this.dataGridView1.Size = new System.Drawing.Size(569, 270);
             this.dataGridView1.TabIndex = 12;
             // 
             // button1
@@ -175,7 +175,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 294);
+            this.ClientSize = new System.Drawing.Size(921, 294);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblChegada);

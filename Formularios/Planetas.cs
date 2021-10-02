@@ -18,7 +18,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             #region
             if (this.cbAcao.Text.Equals("Buscar"))
             {
-                if (this.cbAcao.Text.Equals("") && this.nomePlaneta.Text.Equals(""))
+                if (this.idPlaneta.Text.Equals("") && this.nomePlaneta.Text.Equals(""))
                 {
                     string sql = "select * from Planetas";
                     MessageBox.Show("Selecionando todo mundo da tabela planetas");
@@ -26,13 +26,13 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                 }
                 else if (this.idPlaneta.Text.Equals("") && !this.nomePlaneta.Text.Equals(""))
                 {
-                    string sql = "select Nome from Planetas where Nome='" + this.nomePlaneta.Text + "';";
+                    string sql = "select * from Planetas where Nome='" + this.nomePlaneta.Text + "';";
                     MessageBox.Show("Buscando pelo nome");
                     this.repositorio.Buscar(sql, this.dataGridView1);
                 }
                 else if (!this.idPlaneta.Text.Equals("") && this.nomePlaneta.Text.Equals(""))
                 {
-                    string sql = "select id from Planetas where id='" + this.idPlaneta.Text + "';";
+                    string sql = "select * from Planetas where id='" + this.idPlaneta.Text + "';";
                     MessageBox.Show("Buscando pelo id");
                     this.repositorio.Buscar(sql, this.dataGridView1);
                 }
@@ -55,13 +55,13 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                 }
                 else if (this.idPlaneta.Text.Equals("") && !this.nomePlaneta.Text.Equals(""))
                 {
-                    string sql = "insert into Naves(Nome) values(" + this.nomePlaneta + ");";
+                    string sql = "insert into Planetas(Nome) values('" + this.nomePlaneta.Text + "');";
                     MessageBox.Show("Inserindo pelo nome");
                     this.repositorio.Inserir(sql);
                 }
                 else if (!this.idPlaneta.Text.Equals("") && !this.nomePlaneta.Text.Equals(""))
                 {
-                    string sql = "insert into Naves(id, Nome) values(" + this.idPlaneta + "," + this.nomePlaneta + ");";
+                    string sql = "insert into Planetas(id, Nome) values(" + this.idPlaneta.Text + ",'" + this.nomePlaneta.Text + "');";
                     MessageBox.Show("Inserindo pelo nome e id");
                     this.repositorio.Inserir(sql);
                 }
@@ -82,19 +82,19 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                 }
                 else if (this.idPlaneta.Text.Equals("") && !this.nomePlaneta.Text.Equals(""))
                 {
-                    string sql = "delete * from Planetas where Nome='" + this.nomePlaneta + "';";
+                    string sql = "delete from Planetas where Nome='" + this.nomePlaneta.Text + "';";
                     MessageBox.Show("Deletando pelo nome");
                     this.repositorio.Deletar(sql);
                 }
                 else if (!this.idPlaneta.Text.Equals("") && this.nomePlaneta.Text.Equals(""))
                 {
-                    string sql = "delete * from Planetas where id='" + this.idPlaneta.Text + "';";
+                    string sql = "delete from Planetas where id=" + this.idPlaneta.Text + ";";
                     MessageBox.Show("Deletando pelo id");
                     this.repositorio.Deletar(sql);
                 }
                 else
                 {
-                    string sql = "delete * from Naves where id='" + this.idPlaneta.Text + "' and Nome='" + this.nomePlaneta.Text + "';";
+                    string sql = "delete from Planetas where id='" + this.idPlaneta.Text + "' and Nome='" + this.nomePlaneta.Text + "';";
                     MessageBox.Show("Deletando pelo id e nome");
                     this.repositorio.Deletar(sql);
                 }
@@ -129,6 +129,20 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             else
             {
                 MessageBox.Show("Escolha uma ação");
+            }
+        }
+
+        private void cbAcao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.cbAcao.Text.Equals("Inserir"))
+            {
+                this.label2.Visible = false;
+                this.idPlaneta.Visible = false;
+            }
+            else
+            {
+                this.label2.Visible = true;
+                this.idPlaneta.Visible = true;
             }
         }
     }
