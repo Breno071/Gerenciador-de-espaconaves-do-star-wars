@@ -80,7 +80,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                 }
                 else
                 {
-                    string sql = $"update HistoricoViagens set Pilotoid={this.piloto.Text}, Naveid={nave.Text}, DataSaida={this.dataSaida.Text}, DataChegada={this.dataChegada.Text} where id={this.numeroViagem.Text}";
+                    string sql = $"update HistoricoViagens set Pilotoid={this.piloto.Text}, Naveid={nave.Text}, DataSaida='{this.dataSaida.Text}', DataChegada='{this.dataChegada.Text}' where id={this.numeroViagem.Text}";
                     this.repositorio.Atualizar(sql);
                 }
                 

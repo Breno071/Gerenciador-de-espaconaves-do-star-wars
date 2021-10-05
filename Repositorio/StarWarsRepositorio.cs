@@ -37,11 +37,10 @@ namespace Gerenciador_de_espaçonaves_do_star_wars.Repositorio
 
                 //Fecha a conexão
                 conn.Close();
-                MessageBox.Show("Sucesso");
+                
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
                 MessageBox.Show("" + ex);
             }
     }
@@ -88,7 +87,6 @@ namespace Gerenciador_de_espaçonaves_do_star_wars.Repositorio
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
                 MessageBox.Show("" + ex);
             }
         }
@@ -127,7 +125,15 @@ namespace Gerenciador_de_espaçonaves_do_star_wars.Repositorio
 
                 //Cria o comando SQL
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                MessageBox.Show(cmd.ExecuteNonQuery() + " Linhas alteradas");
+
+                var sqlAuxiliar = "select count(*) from HistoricoViagens where DataChegada=null";
+                SqlCommand cmdAuxiliar = new SqlCommand();
+                int v = cmd.ExecuteNonQuery();
+                if (v == 0)
+                {
+                    MessageBox.Show(cmd.ExecuteNonQuery() + " Linhas alteradas");
+                }
+                
 
                 //Fecha a conexão
                 conn.Close();

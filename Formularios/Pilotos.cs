@@ -74,7 +74,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                 }
                 else
                 {
-                    string sql = $"update Pilotos set Nome='{this.pilotoNome.Text}', PlanetaID={this.planeta.Text};";
+                    string sql = $"update Pilotos set Nome='{this.pilotoNome.Text}', PlanetaID={this.planeta.Text} where id={this.pilotoId.Text};";
                     this.repositorio.Atualizar(sql);
                 }
             }
@@ -83,6 +83,20 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             else
             {
                 MessageBox.Show("Escolha uma ação");
+            }
+        }
+
+        private void cbAcao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.cbAcao.Text.Equals("Inserir"))
+            {
+                this.pilotoId.Visible = false;
+                this.label1.Visible = false;
+            }
+            else
+            {
+                this.pilotoId.Visible = true;
+                this.label1.Visible = true;
             }
         }
     }

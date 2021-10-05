@@ -42,7 +42,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                 }
                 else
                 {
-                    string sql = $"insert into Naves(Nome) values ('{this.nomeNave.Text}';";
+                    string sql = $"insert into Naves(Nome) values ('{this.nomeNave.Text}');";
                     this.repositorio.Inserir(sql);
                 }
             }
@@ -58,7 +58,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                 }
                 else
                 {
-                    string sql = "delete from Naves where id='" + this.idNave.Text + ";";
+                    string sql = "delete from Naves where id=" + this.idNave.Text + ";";
                     this.repositorio.Deletar(sql);
                 }
             }
@@ -87,9 +87,11 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             }   
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        
+
+        private void cbAcao_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.cbAcao.Text.Equals("Inserir")) 
+            if (this.cbAcao.Text.Equals("Inserir"))
             {
                 this.label3.Visible = false;
                 this.idNave.Visible = false;
@@ -99,7 +101,6 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                 this.label3.Visible = true;
                 this.idNave.Visible = true;
             }
-            
         }
     }
 }

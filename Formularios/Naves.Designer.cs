@@ -108,6 +108,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             this.cbAcao.Size = new System.Drawing.Size(121, 21);
             this.cbAcao.TabIndex = 16;
             this.cbAcao.Text = "Selecione a ação";
+            this.cbAcao.SelectedIndexChanged += new System.EventHandler(this.cbAcao_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -132,7 +133,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridViewNaves);
             this.Name = "Naves";
-            this.Text = "Star Wars";
+            this.Text = "Naves";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNaves)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

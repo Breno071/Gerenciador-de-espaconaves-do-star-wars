@@ -38,7 +38,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             {
                 if (!this.nomePlaneta.Text.Equals(""))
                 {
-                    string sql = $"insert into Planetas(Nome) values ({this.nomePlaneta.Text});";
+                    string sql = $"insert into Planetas(Nome) values ('{this.nomePlaneta.Text}');";
                     this.repositorio.Inserir(sql);
                 }
                 else
@@ -74,7 +74,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                 }
                 else
                 {
-                    string sql = "update Planetas set Nome = '" + this.nomePlaneta.Text + "' where ID = '" + this.idPlaneta.Text + "';";
+                    string sql = "update Planetas set Nome = '" + this.nomePlaneta.Text + "' where ID = " + this.idPlaneta.Text + ";";
                     this.repositorio.Atualizar(sql);
                 }
             }
