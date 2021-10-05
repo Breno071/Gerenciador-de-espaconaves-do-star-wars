@@ -16,7 +16,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars.Repositorio
             try
             {
                 //Faz a conexão com o banco de dados
-                string conexao = @"Data Source=DESKTOP-6AFO6DC\SQLEXPRESS;Initial Catalog=StarWars;Integrated Security=True";
+                string conexao = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\DataBase\StarWars.mdf;Integrated Security=True;Connect Timeout=30";
                 SqlConnection conn = new SqlConnection(conexao);
                 conn.Open();
 
@@ -51,7 +51,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars.Repositorio
             try
             {
                 //Faz a conexão com o banco de dados
-                string conexao = @"Data Source=DESKTOP-6AFO6DC\SQLEXPRESS;Initial Catalog=StarWars;Integrated Security=True";
+                string conexao = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\DataBase\StarWars.mdf;Integrated Security=True;Connect Timeout=30";
                 SqlConnection conn = new SqlConnection(conexao);
                 conn.Open();
 
@@ -74,7 +74,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars.Repositorio
             try
             {
                 //Faz a conexão com o banco de dados
-                string conexao = @"Data Source=DESKTOP-6AFO6DC\SQLEXPRESS;Initial Catalog=StarWars;Integrated Security=True";
+                string conexao = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\DataBase\StarWars.mdf;Integrated Security=True;Connect Timeout=30";
                 SqlConnection conn = new SqlConnection(conexao);
                 conn.Open();
 
@@ -98,7 +98,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars.Repositorio
             try
             {
                 //Faz a conexão com o banco de dados
-                string conexao = @"Data Source=DESKTOP-6AFO6DC\SQLEXPRESS;Initial Catalog=StarWars;Integrated Security=True";
+                string conexao = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\DataBase\StarWars.mdf;Integrated Security=True;Connect Timeout=30";
                 SqlConnection conn = new SqlConnection(conexao);
                 conn.Open();
 
@@ -121,7 +121,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars.Repositorio
             try
             {
                 //Faz a conexão com o banco de dados
-                string conexao = @"Data Source=DESKTOP-6AFO6DC\SQLEXPRESS;Initial Catalog=StarWars;Integrated Security=True";
+                string conexao = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\DataBase\StarWars.mdf;Integrated Security=True;Connect Timeout=30";
                 SqlConnection conn = new SqlConnection(conexao);
                 conn.Open();
 

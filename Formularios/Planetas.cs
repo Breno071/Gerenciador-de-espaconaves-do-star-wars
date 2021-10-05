@@ -18,30 +18,17 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             #region
             if (this.cbAcao.Text.Equals("Buscar"))
             {
-                if (this.idPlaneta.Text.Equals("") && this.nomePlaneta.Text.Equals(""))
+                if (this.idPlaneta.Text.Equals(""))
                 {
                     string sql = "select * from Planetas";
-                    MessageBox.Show("Selecionando todo mundo da tabela planetas");
-                    this.repositorio.Buscar(sql, this.dataGridView1);
-                }
-                else if (this.idPlaneta.Text.Equals("") && !this.nomePlaneta.Text.Equals(""))
-                {
-                    string sql = "select * from Planetas where Nome='" + this.nomePlaneta.Text + "';";
-                    MessageBox.Show("Buscando pelo nome");
-                    this.repositorio.Buscar(sql, this.dataGridView1);
-                }
-                else if (!this.idPlaneta.Text.Equals("") && this.nomePlaneta.Text.Equals(""))
-                {
-                    string sql = "select * from Planetas where id='" + this.idPlaneta.Text + "';";
-                    MessageBox.Show("Buscando pelo id");
                     this.repositorio.Buscar(sql, this.dataGridView1);
                 }
                 else
                 {
-                    string sql = "select * from Planetas where id='" + this.idPlaneta.Text + "' and Nome='" + this.nomePlaneta.Text + "';";
-                    MessageBox.Show("Buscando por id e nome");
+                    string sql = $"select * from Planetas where ID={this.nomePlaneta.Text}";
                     this.repositorio.Buscar(sql, this.dataGridView1);
                 }
+                
             }
             #endregion
 
@@ -49,20 +36,9 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             #region
             else if (this.cbAcao.Text.Equals("Inserir"))
             {
-                if (this.idPlaneta.Text.Equals("") && this.nomePlaneta.Text.Equals(""))
+                if (!this.nomePlaneta.Text.Equals(""))
                 {
-                    MessageBox.Show("Informe os valores a serem inseridos");
-                }
-                else if (this.idPlaneta.Text.Equals("") && !this.nomePlaneta.Text.Equals(""))
-                {
-                    string sql = "insert into Planetas(Nome) values('" + this.nomePlaneta.Text + "');";
-                    MessageBox.Show("Inserindo pelo nome");
-                    this.repositorio.Inserir(sql);
-                }
-                else if (!this.idPlaneta.Text.Equals("") && !this.nomePlaneta.Text.Equals(""))
-                {
-                    string sql = "insert into Planetas(id, Nome) values(" + this.idPlaneta.Text + ",'" + this.nomePlaneta.Text + "');";
-                    MessageBox.Show("Inserindo pelo nome e id");
+                    string sql = $"insert into Planetas(Nome) values ({this.nomePlaneta.Text});";
                     this.repositorio.Inserir(sql);
                 }
                 else
@@ -76,26 +52,13 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             #region
             else if (this.cbAcao.Text.Equals("Deletar"))
             {
-                if (this.idPlaneta.Text.Equals("") && this.nomePlaneta.Text.Equals(""))
+                if (this.idPlaneta.Text.Equals(""))
                 {
                     MessageBox.Show("Informe os dados a serem deletados");
-                }
-                else if (this.idPlaneta.Text.Equals("") && !this.nomePlaneta.Text.Equals(""))
-                {
-                    string sql = "delete from Planetas where Nome='" + this.nomePlaneta.Text + "';";
-                    MessageBox.Show("Deletando pelo nome");
-                    this.repositorio.Deletar(sql);
-                }
-                else if (!this.idPlaneta.Text.Equals("") && this.nomePlaneta.Text.Equals(""))
-                {
-                    string sql = "delete from Planetas where id=" + this.idPlaneta.Text + ";";
-                    MessageBox.Show("Deletando pelo id");
-                    this.repositorio.Deletar(sql);
-                }
+                }  
                 else
                 {
-                    string sql = "delete from Planetas where id='" + this.idPlaneta.Text + "' and Nome='" + this.nomePlaneta.Text + "';";
-                    MessageBox.Show("Deletando pelo id e nome");
+                    string sql = $"delete from Planetas where ID={this.idPlaneta.Text};";
                     this.repositorio.Deletar(sql);
                 }
             }
@@ -105,22 +68,13 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             #region
             else if (this.cbAcao.Text.Equals("Atualizar"))
             {
-                if (this.idPlaneta.Text.Equals("") && this.nomePlaneta.Text.Equals(""))
+                if (this.idPlaneta.Text.Equals("") || this.nomePlaneta.Text.Equals(""))
                 {
-                    MessageBox.Show("Insira os dados para atualizar");
-                }
-                else if (this.idPlaneta.Text.Equals("") && !this.nomePlaneta.Text.Equals(""))
-                {
-                    MessageBox.Show("Informe o id que deseja atualizar e o novo nome");
-                }
-                else if (!this.idPlaneta.Text.Equals("") && this.nomePlaneta.Text.Equals(""))
-                {
-                    MessageBox.Show("Informe o nome a substituir");
+                    MessageBox.Show("Insira o id a ser atualizado");
                 }
                 else
                 {
-                    string sql = "update Planetas set Nome = '" + this.nomePlaneta.Text + "' where id = '" + this.idPlaneta.Text + "';";
-                    MessageBox.Show("Atualizando tabela");
+                    string sql = "update Planetas set Nome = '" + this.nomePlaneta.Text + "' where ID = '" + this.idPlaneta.Text + "';";
                     this.repositorio.Atualizar(sql);
                 }
             }

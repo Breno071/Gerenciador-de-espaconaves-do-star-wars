@@ -22,7 +22,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
         {
             try
             {
-                string conexao = @"Data Source=DESKTOP-6AFO6DC\SQLEXPRESS;Initial Catalog=StarWars;Integrated Security=True";
+                string conexao = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Narde\Visual Studio\Projects\Gerenciador de espaçonaves do star wars\Gerenciador de espaçonaves do star wars\DataBase\StarWars.mdf;Integrated Security=True;Connect Timeout=30";
                 SqlConnection conn = new SqlConnection(conexao);
                 conn.Open();
                 conn.Close();
@@ -33,9 +33,9 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                 this.btnPlanetas.Visible = true;
                 this.btnViagens.Visible = true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Algo não deu certo. Você não é uma invasor é?");
+                MessageBox.Show("" + ex);
             }
         }
 

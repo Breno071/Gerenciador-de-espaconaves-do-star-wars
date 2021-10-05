@@ -31,7 +31,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
         {
             this.pilotoId = new System.Windows.Forms.TextBox();
             this.pilotoNome = new System.Windows.Forms.TextBox();
-            this.pilotoPlaneta = new System.Windows.Forms.TextBox();
+            this.planeta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,12 +56,12 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             this.pilotoNome.Size = new System.Drawing.Size(121, 20);
             this.pilotoNome.TabIndex = 1;
             // 
-            // pilotoPlaneta
+            // planeta
             // 
-            this.pilotoPlaneta.Location = new System.Drawing.Point(158, 236);
-            this.pilotoPlaneta.Name = "pilotoPlaneta";
-            this.pilotoPlaneta.Size = new System.Drawing.Size(121, 20);
-            this.pilotoPlaneta.TabIndex = 2;
+            this.planeta.Location = new System.Drawing.Point(158, 236);
+            this.planeta.Name = "planeta";
+            this.planeta.Size = new System.Drawing.Size(121, 20);
+            this.planeta.TabIndex = 2;
             // 
             // label1
             // 
@@ -84,11 +84,11 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 243);
+            this.label3.Location = new System.Drawing.Point(95, 243);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 13);
+            this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Planeta onde nasceu";
+            this.label3.Text = "Planeta ID";
             // 
             // button1
             // 
@@ -146,7 +146,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pilotoPlaneta);
+            this.Controls.Add(this.planeta);
             this.Controls.Add(this.pilotoNome);
             this.Controls.Add(this.pilotoId);
             this.Name = "Pilotos";
@@ -161,7 +161,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
 
         private System.Windows.Forms.TextBox pilotoId;
         private System.Windows.Forms.TextBox pilotoNome;
-        private System.Windows.Forms.TextBox pilotoPlaneta;
+        private System.Windows.Forms.TextBox planeta;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

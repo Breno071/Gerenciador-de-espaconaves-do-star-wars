@@ -30,8 +30,8 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
         private void InitializeComponent()
         {
             this.numeroViagem = new System.Windows.Forms.TextBox();
-            this.nomePiloto = new System.Windows.Forms.TextBox();
-            this.nomeNave = new System.Windows.Forms.TextBox();
+            this.piloto = new System.Windows.Forms.TextBox();
+            this.nave = new System.Windows.Forms.TextBox();
             this.dataSaida = new System.Windows.Forms.TextBox();
             this.dataChegada = new System.Windows.Forms.TextBox();
             this.cbAcao = new System.Windows.Forms.ComboBox();
@@ -55,17 +55,17 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             // 
             // nomePiloto
             // 
-            this.nomePiloto.Location = new System.Drawing.Point(118, 145);
-            this.nomePiloto.Name = "nomePiloto";
-            this.nomePiloto.Size = new System.Drawing.Size(121, 20);
-            this.nomePiloto.TabIndex = 1;
+            this.piloto.Location = new System.Drawing.Point(118, 145);
+            this.piloto.Name = "nomePiloto";
+            this.piloto.Size = new System.Drawing.Size(121, 20);
+            this.piloto.TabIndex = 1;
             // 
             // nomeNave
             // 
-            this.nomeNave.Location = new System.Drawing.Point(118, 171);
-            this.nomeNave.Name = "nomeNave";
-            this.nomeNave.Size = new System.Drawing.Size(121, 20);
-            this.nomeNave.TabIndex = 2;
+            this.nave.Location = new System.Drawing.Point(118, 171);
+            this.nave.Name = "nomeNave";
+            this.nave.Size = new System.Drawing.Size(121, 20);
+            this.nave.TabIndex = 2;
             // 
             // dataSaida
             // 
@@ -117,20 +117,20 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(75, 151);
+            this.label3.Location = new System.Drawing.Point(65, 152);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Piloto";
+            this.label3.Text = "Piloto ID";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(77, 177);
+            this.label4.Location = new System.Drawing.Point(65, 178);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Nave";
+            this.label4.Text = "Nave ID";
             // 
             // label5
             // 
@@ -187,8 +187,8 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
             this.Controls.Add(this.cbAcao);
             this.Controls.Add(this.dataChegada);
             this.Controls.Add(this.dataSaida);
-            this.Controls.Add(this.nomeNave);
-            this.Controls.Add(this.nomePiloto);
+            this.Controls.Add(this.nave);
+            this.Controls.Add(this.piloto);
             this.Controls.Add(this.numeroViagem);
             this.Name = "Viagens";
             this.Text = "Viagens";
@@ -201,8 +201,8 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
         #endregion
 
         private System.Windows.Forms.TextBox numeroViagem;
-        private System.Windows.Forms.TextBox nomePiloto;
-        private System.Windows.Forms.TextBox nomeNave;
+        private System.Windows.Forms.TextBox piloto;
+        private System.Windows.Forms.TextBox nave;
         private System.Windows.Forms.TextBox dataSaida;
         private System.Windows.Forms.TextBox dataChegada;
         private System.Windows.Forms.ComboBox cbAcao;
