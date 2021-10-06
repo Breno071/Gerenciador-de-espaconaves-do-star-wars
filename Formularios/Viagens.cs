@@ -45,7 +45,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars
                 else
                 {
                     string sql = "insert into HistoricoViagens(Pilotoid, Naveid, DataSaida) values ('" + this.piloto.Text + "', '" + this.nave.Text + "', '" + this.dataSaida.Text + "');";
-                    this.repositorio.Inserir(sql);
+                    this.repositorio.InserirViagens(sql, this.piloto.Text);
                 }
             }
             #endregion

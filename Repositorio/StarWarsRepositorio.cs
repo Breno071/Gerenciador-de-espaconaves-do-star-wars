@@ -114,7 +114,7 @@ namespace Gerenciador_de_espaçonaves_do_star_wars.Repositorio
             }
         }
 
-        public void BuscaViagens(string sql)
+        public void InserirViagens(string sql, string idPiloto)
         {
             try
             {
@@ -126,12 +126,17 @@ namespace Gerenciador_de_espaçonaves_do_star_wars.Repositorio
                 //Cria o comando SQL
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
-                var sqlAuxiliar = "select count(*) from HistoricoViagens where DataChegada=null";
-                SqlCommand cmdAuxiliar = new SqlCommand();
-                int v = cmd.ExecuteNonQuery();
+                var sqlAuxiliar = $"select count(*) from HistoricoViagens where Pilotoid={idPiloto} and DataChegada is null;";
+                SqlCommand cmdAuxiliar = new SqlCommand(sqlAuxiliar, conn);
+
+                int v = cmdAuxiliar.ExecuteNonQuery();
                 if (v == 0)
                 {
-                    MessageBox.Show(cmd.ExecuteNonQuery() + " Linhas alteradas");
+                    MessageBox.Show(cmd.ExecuteNonQuery() + " Linhas alteradas"); ;
+                }
+                else
+                {
+                    MessageBox.Show("Esse piloto está em viagem é necessário atualizar a Data de Chegada para que ele possa viajar novamente");
                 }
                 
 
